@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Welcome</title>
+   
+
+    <style>
+        #divgallery{
+            width: 60%;
+            height: 75px; 
+            border: 10px groove transparent;
+            padding: 5px;
+            border-image: url(images/slide/image_17.jpg) 30% round;
+            margin: auto;
+        }
+
+        #slide{
+            width: 50%;
+            height: 50%;
+
+        
+        }
+
+        header{
+            background-image: url(warner_bros_logo-e1557423812288\ -\ Copy.jpg);
+            background-size: cover;
+            height: 200px;
+
+            
+        }
+        
+    </style>
+    
+
+
+   
+</head>
+<script src="scripts/LoadMasterPage.js"></script>
+<body>
+
+<header id="banner" class="welcome">
+    <span id="sitetitle" style="color: aliceblue;  ">WARNER BROS</span>
+    <span id="sitemotto">The home of entertainment!</span>
+
+</header>    
+
+
+    <nav id="navmenu" class="welcome">
+        <ul id="ulmenu">
+            <li><a href="welcome.html">Welcome</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="tvshows.html">TV Shows</a></li>
+            <li><a href="games&apps.html">Games & Apps</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div id="divcolcontainer" class="welcome">
+        <section id="leftsidebar" class="welcome">
+
+            <div id="divsearch">
+                <label for="txtsearch" style="color: aliceblue; font-size: larger;">Search :</label>
+                <input type="search" id="txtsearch">
+            </div>
+
+     
+
+            
+    <section id="gallery">
+
+        <img id="slide" src="" alt="Slideshow Images" title="Gallery" onerror="this.onerror=null; this.src='images/404_error.jpg';">
+
+    </section>       
+ 
+    <script>
+
+        
+        //image array to store all image paths
+        var arrgallery = new Array();
+
+        //add images to array
+        var k; 
+        for(k=0; k<=7; k++){
+            arrgallery[k] = (k+1) + '.jpg';
+        }
+
+        //holds current index of loaded image
+        var imgIndex = 0; 
+
+         //load and slide images
+         function slideshow(){
+            document.getElementById("slide").setAttribute("src", "images/slide/image_"+arrgallery[imgIndex]);
+            imgIndex = (imgIndex < arrgallery.length-1)? imgIndex + 1 : 0; //control looping process
+         }
+
+          //set timer || use document instead of window event 
+        window.onload=function(){
+            setInterval("slideshow()", 5000); //setTimeout("slideshow()", 5000);
+        }
+
+    </script>
+</body>
+</html>

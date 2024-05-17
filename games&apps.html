@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games & Apps</title>
+
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/main.css">
+
+     <!--cool font from google-->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Mirza&display=swap" rel="stylesheet">
+
+     <!-- Add font awesome to all pages. (Adds Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Below is a Mobile responsive tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+</head>
+<body>
+    <div class="navbar">
+        <img src="images/logo.svg" alt="Logo">
+        <br>
+        <br>
+        <!-- Add your navigation links here -->
+        <a href="index.html">Home</a>
+        <a href="movies.html">Movies</a>
+        <a href="tvshows.html">TV Shows</a>
+        <a href="collections.html">Collections</a>
+        <a href="games&apps.html">Games & Apps</a>
+        <a href="feedback.html">Feedback</a>
+    
+        <div class="search">
+            <input type="text" id="search-input" placeholder="Search Games and Apps...">
+        </div>
+    </div>
+
+</div>
+
+<button class="accordion">Games for you</button>
+<div class="accordion-content">
+<div class="gamePoster-container">
+    <h1> Batman</h1>
+    <a href="batman.html">
+    <img src="images/batman.jpg" alt="Batman-Arkham-Knight2">
+    <p> </p>
+    <button class="rounded-button">More info</button>
+    <button class="rounded-button">Buy Now</button>
+    </a>
+</div>
+
+<div class="gamePoster-container">
+    <h1> Injustice 2</h1>
+    <img src="images/injustice.jpg" alt="Injustice">
+    <p> </p>
+    <button class="rounded-button">Play Demo</button>
+    <button class="rounded-button">Buy Now</button>
+</div>
+</div>
+
+<button class="accordion">Gameplay</button>
+<div class="accordion-content">
+
+<section id="livemedia" class="media">
+    <h1>Batman Arkham Knight2 Gameplay</h1>
+    <iframe width="942" height="530" src="https://www.youtube.com/embed/QrZ1DmtdWoo?list=PLJms5sWamFOWmrGgkZVyz7_SkBSkF3hb9" title="Batman: Arkham Knight Walkthrough - Part 1 - Intro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</section>
+</div>
+
+    <div class="footer">
+        <img src="images/logo.svg" alt="Logo"><p>Warner Bros. Entertainment Inc. All rights reserved.</p>
+        <p>Legal | ToS | Privacy Policy | Cookie Policy</p>
+        <div class="footer-icon-container">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-linkedin"></i>
+        </div>
+        <p>By Mildred Ramalekane</p>
+    </div>
+
+    <!--scipt for accordion-->
+
+    <script>
+          //JavaScript code for the slideshow (banner)
+          let banners = document.getElementsByClassName("banner");
+        let accordionButtons = document.getElementsByClassName("accordion");
+
+        // Set the first banner to active
+        // Set the first accordion to active
+        let currentBanner = 0;
+        let currentAccordion = 0;
+
+        // Show the first banner
+        // Show the first accordion
+        // Hide the rest of the banners
+        // Hide the rest of the accordions
+        // n is the index of the banner that was clicked
+        function showBanner(n) {
+        banners[currentBanner].classList.remove("active");
+        banners[n].classList.add("active");
+        currentBanner = n;
+    }
+
+        // n is the index of the accordion button that was clicked
+        // the function will toggle the accordion content
+        // and change the active accordion button
+        function toggleAccordion(n) {
+        let accordionContent = accordionButtons[n].nextElementSibling;
+        accordionContent.style.display = accordionContent.style.display === "block" ? "none" : "block";
+
+        accordionButtons[currentAccordion].classList.remove("active-accordion");
+        accordionButtons[n].classList.add("active-accordion");
+        currentAccordion = n;
+    }
+
+        // explain what this does
+        // this will show the next banner
+        // after 5 seconds(5000 is in milliseconds)
+        setInterval(function() {
+        let nextBanner = (currentBanner + 1) % banners.length;
+        showBanner(nextBanner);
+    }, 5000);
+        // Add event listeners to the accordion buttons
+        // When clicked, the accordion will open/close
+    for (let i = 0; i < accordionButtons.length; i++) {
+      accordionButtons[i].addEventListener("click", function() {
+          toggleAccordion(i);
+            });
+        }
+    </script>
+
+    
+</body>
+</html>

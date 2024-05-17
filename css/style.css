@@ -1,0 +1,36 @@
+nav li{
+    
+    background-color: rgb(3, 3, 75);
+   height: auto;
+   width: auto;
+    display: inline-block;
+    text-align: right;
+}
+
+nav a{
+    color:white;
+}
+
+fieldset label{
+    color: white;
+    font-size: large;
+
+}
+
+ section{
+    background-color:rgb(3, 3, 75);
+}
+
+legend{
+    color: aliceblue;
+    font-size: larger;
+    font-weight: bolder;
+    
+}
+
+sitetitle{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
